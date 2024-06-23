@@ -67,7 +67,7 @@ const FormComponent = () => {
           <label>Email:</label>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Gmail"
             name="email"
             value={inputs.email}
             onChange={handleChange}

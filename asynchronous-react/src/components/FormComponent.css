@@ -1,4 +1,9 @@
+/** PC View **/
+* {
+    margin: 1px;
+    padding: 1px;
 
+}
 body {
     /* background: linear-gradient(to right, gray, cyan, gray); */
     background: url(./image/ui-ux.jpg);
@@ -65,4 +70,37 @@ tbody tr {
 .blink-red {
     color: red;
     animation: blink 5s infinite;
+}
+
+/* Mobile view of the webpage */
+@media screen and (max-width: 1200px) {
+    * {
+        margin: 2px;
+        padding: .2px;
+
+    }
+    body {
+        width: 100%; height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    form, div {
+        width: 100%; height: 100%;
+        margin-right: 4%;
+    }
+    form .userSubmission {
+        margin-right: 4%;
+        color: navy;
+        font-weight: bold;
+    }
+    .submissions-table th,
+    .submissions-table td {
+        border: 1px solid black;
+        padding: .1rem;
+        text-align: left;
+    }
+    tr {
+        padding-left: 2px;
+    }
 }
