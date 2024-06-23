@@ -1,0 +1,62 @@
+
+body {
+    background: linear-gradient(to right, gray, cyan, gray);
+}
+
+.submissions-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    color: navy;
+    font-weight: bold;
+}
+
+form .userMail {
+    margin-left: 1%;
+}
+form .userSubmission {
+    margin-left: .5%;
+    color: navy;
+    font-weight: bold;
+}
+
+form .userSubmission:hover {
+    color: blue;
+}
+
+tbody tr {
+    color: darkblue;
+}
+
+.submissions-table th,
+.submissions-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.submissions-table caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink-green {
+    color: green;
+    animation: blink 5s infinite;
+}
+
+.blink-red {
+    color: red;
+    animation: blink 5s infinite;
+}
