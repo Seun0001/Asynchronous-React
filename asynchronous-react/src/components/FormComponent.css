@@ -84,7 +84,7 @@ tbody tr {
 }
 
 /* Mobile view of the webpage */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 700px) {
     * {
         margin: 2px;
         padding: .2px;
@@ -96,10 +96,11 @@ tbody tr {
         align-items: center;
         justify-content: center;
         overflow-y: scroll;
+        
     }
     form, div {
         margin-right: .5%;
-        width: 100%;
+        width: 100%; background-color: red;
     }
     form .userSubmission {
         margin-right: 4%;
