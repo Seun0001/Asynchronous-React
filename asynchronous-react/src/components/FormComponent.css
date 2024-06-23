@@ -84,7 +84,7 @@ tbody tr {
 }
 
 /* Mobile view of the webpage */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 750px) {
     * {
         margin: 2px;
         padding: .2px;
