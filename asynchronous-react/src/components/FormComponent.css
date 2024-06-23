@@ -112,6 +112,9 @@ tbody tr {
         padding: .1rem;
         text-align: left;
     }
+    thead, tbody {
+        width: 50%;
+    }
     tr {
         padding-left: 2px;
     }
