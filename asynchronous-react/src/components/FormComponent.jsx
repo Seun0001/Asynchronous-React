@@ -78,35 +78,37 @@ const FormComponent = () => {
           Submit
         </button>
       </form>
-      <div>
+      <div className="SubmissionOverflow">
         <h2>Submissions:</h2>
-        <table className="submissions-table">
-          <caption>Submissions</caption>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Time</th>
-              <th>Error Marker</th>
-            </tr>
-          </thead>
-          <tbody>
-            {submissions.map((submission, index) => (
-              <tr key={index}>
-                <td>{submission.name}</td>
-                <td>{submission.email}</td>
-                <td>{submission.time}</td>
-                <td
-                  className={
-                    submission.error === "0%" ? "blink-green" : "blink-red"
-                  }
-                >
-                  {submission.error}
-                </td>
+        <div>
+          <table className="submissions-table">
+            <caption>Submissions</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Time</th>
+                <th>Error Marker</th>
               </tr>
+            </thead>
+            <tbody>
+                {submissions.map((submission, index) => (
+                <tr key={index}>
+                  <td>{submission.name}</td>
+                  <td>{submission.email}</td>
+                  <td>{submission.time}</td>
+                  <td
+                    className={
+                      submission.error === "0%" ? "blink-green" : "blink-red"
+                    }
+                  >
+                    {submission.error}
+                  </td>
+                </tr>
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
