@@ -98,7 +98,7 @@ tbody tr {
         overflow-y: scroll;
     }
     form, div {
-        margin-right: 5%;
+        margin-right: .5%;
         width: 100%;
     }
     form .userSubmission {
