@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./FormComponent.css";
 
-
 const FormComponent = () => {
   const [inputs, setInputs] = useState({ name: "", email: "" });
   const [submissions, setSubmissions] = useState([]);
@@ -14,21 +13,8 @@ const FormComponent = () => {
     setInputs({ ...inputs, [name]: value });
   };
 
-  // Simulated async function to save data
-  const saveData = async (data) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (Math.random() > 0.2) {
-          resolve("Data saved successfully");
-        } else {
-          reject("Failed to save data");
-        }
-      }, 1000);
-    });
-  };
-
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const currentTime = new Date().toLocaleString();
     const errorMarker = validateInputs(inputs) ? "0%" : "100%";
@@ -36,7 +22,6 @@ const FormComponent = () => {
       setError("Invalid input. Please ensure all fields are filled correctly.");
       return;
     }
-
     // Check if the name and email combination already exists
     const exists = submissions.some(
       (submission) =>
@@ -46,22 +31,13 @@ const FormComponent = () => {
       setError("This name and email combination already exists in the submissions.");
       return;
     }
-
-    // Async/Await: Call the async function to save data
-    try {
-      const message = await saveData(inputs);
-      console.log(message);
-      setError("");
-      setSubmissions([
-        ...submissions,
-        { ...inputs, time: currentTime, error: errorMarker },
-      ]);
-      // Form Data: Resetting the form inputs after submission
-      setInputs({ name: "", email: "" });
-    } catch (error) {
-      setError("Failed to save data. Please try again.");
-      console.error(error);
-    }
+    setError("");
+    setSubmissions([
+      ...submissions,
+      { ...inputs, time: currentTime, error: errorMarker },
+    ]);
+    // Form Data: Resetting the form inputs after submission
+    setInputs({ name: "", email: "" });
   };
 
   const validateInputs = (inputs) => {
@@ -119,7 +95,7 @@ const FormComponent = () => {
               </tr>
             </thead>
             <tbody>
-              {submissions.map((submission, index) => (
+                {submissions.map((submission, index) => (
                 <tr key={index}>
                   <td className="PX-2">{submission.name}</td>
                   <td className="PX-2">{submission.email}</td>
@@ -132,9 +108,9 @@ const FormComponent = () => {
                     {submission.error}
                   </td>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+            ))}
+          </tbody>
+        </table>
         </div>
       </div>
     </div>
@@ -160,15 +136,15 @@ export default FormComponent;
 /*
  * Promises:
  * Promises are objects representing the eventual completion or failure of asynchronous operations.
- * In this project, the saveData function returns a Promise that simulates saving data asynchronously.
- * The Promise either resolves (indicating success) or rejects (indicating failure).
+ * Promises are not explicitly used in this project, but they are commonly used in web development for operations like data fetching.
+ * For example, fetching data from an API might return a promise that resolves with the data or rejects with an error.
  */
 
 /*
  * Async/Await:
  * Async/Await are syntactic sugars in JavaScript to work with Promises more comfortably.
  * They make asynchronous code look and behave more like synchronous code, making it easier to read and write.
- * In this project, the handleSubmit function uses async/await to handle the asynchronous saveData function.
+ * Although not used in this project, async/await is commonly used in React applications for handling asynchronous operations such as data fetching.
  * Example:
  * async function fetchData() {
  *   try {
